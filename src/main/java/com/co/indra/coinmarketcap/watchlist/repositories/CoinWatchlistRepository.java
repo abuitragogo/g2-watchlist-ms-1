@@ -28,15 +28,15 @@ public class CoinWatchlistRepository {
     private JdbcTemplate jdbcTemplate;
 
     public void create(CoinWatchlist coinWatchlist){
-        jdbcTemplate.update("INSERT INTO tbl_coinWatchlist(idSymbolCoin, id_watchlist) values(?,?)",
+        jdbcTemplate.update("INSERT INTO tbl_coinWatchlist(id_symbolCoin, id_watchlist) values(?,?)",
                 coinWatchlist.getIdSymbolCoin(), coinWatchlist.getIdWatchlist());
     }
 
-    public List<CoinWatchlist> findByUsernameAndSimboly(String username, String simbolyCoin){
+    public List<CoinWatchlist> findByUsernameAndSimboly(int idWatchlist, String simbolyCoin){
         return jdbcTemplate.query(
-                "SELECT id, id_symbolCoin, id_watchlist FROM tbl_coinWatchlist WHERE id_symbolCoin=? and id_watchlist=?",
+                "SELECT id, id_symbolCoin, id_watchlist FROM tbl_coinWatchlist WHERE id_symbolcoin=? and id_watchlist=?",
                 new CoinWatchlistRowMapper(),
-                username, simbolyCoin);
+                simbolyCoin, idWatchlist);
     }
 
 }

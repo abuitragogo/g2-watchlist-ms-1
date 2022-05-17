@@ -1,5 +1,6 @@
 package com.co.indra.coinmarketcap.watchlist.controllers;
 
+import com.co.indra.coinmarketcap.watchlist.Config.Routes;
 import com.co.indra.coinmarketcap.watchlist.models.Entities.CoinWatchlist;
 import com.co.indra.coinmarketcap.watchlist.models.Entities.Watchlist;
 import com.co.indra.coinmarketcap.watchlist.services.CoinWatchlistService;
@@ -12,7 +13,7 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("/coin-watchlists")
+@RequestMapping(Routes.WATCHLIST_PATH+Routes.COIN_WATCHLIST_PATH)
 public class CoinWatchlistController {
 
     @Autowired
@@ -20,7 +21,7 @@ public class CoinWatchlistController {
 
 
     /**
-     * URL /coin-watchlists
+     * URL /watchlist/coins
      * @param coinWatchlist
      */
     @PostMapping

@@ -1,5 +1,6 @@
 package com.co.indra.coinmarketcap.watchlist.controllers;
 
+import com.co.indra.coinmarketcap.watchlist.Config.Routes;
 import com.co.indra.coinmarketcap.watchlist.models.Entities.Watchlist;
 import com.co.indra.coinmarketcap.watchlist.services.WatchlistService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +10,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/watchlists")
+@RequestMapping(Routes.WATCHLIST_PATH)
 public class WatchlistController {
 
     @Autowired
